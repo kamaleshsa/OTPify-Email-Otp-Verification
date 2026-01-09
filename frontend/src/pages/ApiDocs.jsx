@@ -30,14 +30,14 @@ export const ApiDocs = ({ user, onLogout }) => {
     navigate('/');
   };
 
-  const curlSendExample = `curl -X POST http://localhost:8000/api/otp/send \\
+  const curlSendExample = `curl -X POST https://otpify.onrender.com/api/otp/send \\
   -H "X-API-KEY: YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
     "email": "user@example.com"
   }'`;
 
-  const curlVerifyExample = `curl -X POST http://localhost:8000/api/otp/verify \\
+  const curlVerifyExample = `curl -X POST https://otpify.onrender.com/api/otp/verify \\
   -H "X-API-KEY: YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -45,7 +45,7 @@ export const ApiDocs = ({ user, onLogout }) => {
     "otp": "123456"
   }'`;
 
-  const jsSendExample = `const response = await fetch('http://localhost:8000/api/otp/send', {
+  const jsSendExample = `const response = await fetch('https://otpify.onrender.com/api/otp/send', {
   method: 'POST',
   headers: {
     'X-API-KEY': 'YOUR_API_KEY',
@@ -60,7 +60,7 @@ const data = await response.json();
 console.log(data);
 // { "message": "OTP sent successfully" }`;
 
-  const jsVerifyExample = `const response = await fetch('http://localhost:8000/api/otp/verify', {
+  const jsVerifyExample = `const response = await fetch('https://otpify.onrender.com/api/otp/verify', {
   method: 'POST',
   headers: {
     'X-API-KEY': 'YOUR_API_KEY',
@@ -78,7 +78,7 @@ console.log(data);
 
   const pythonSendExample = `import requests
 
-url = "http://localhost:8000/api/otp/send"
+url = "https://otpify.onrender.com/api/otp/send"
 headers = {
     "X-API-KEY": "YOUR_API_KEY",
     "Content-Type": "application/json"
@@ -93,7 +93,7 @@ print(response.json())
 
   const pythonVerifyExample = `import requests
 
-url = "http://localhost:8000/api/otp/verify"
+url = "https://otpify.onrender.com/api/otp/verify"
 headers = {
     "X-API-KEY": "YOUR_API_KEY",
     "Content-Type": "application/json"
@@ -222,12 +222,12 @@ print(response.json())
             <h2 className="text-2xl font-bold mb-4">Base URL</h2>
             <div className="glass p-4 rounded-lg relative">
               <pre className="text-sm text-foreground">
-                <code>http://localhost:8000</code>
+                <code>https://otpify.onrender.com</code>
               </pre>
               <Button
                 size="sm"
                 variant="ghost"
-                onClick={() => copyCode('http://localhost:8000')}
+                onClick={() => copyCode('https://otpify.onrender.com')}
                 className="absolute top-2 right-2"
               >
                 <Copy className="w-4 h-4" />
